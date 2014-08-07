@@ -1,0 +1,41 @@
+<script>
+
+var distance = 100
+var raceOn = true
+var winner = "none"
+
+function Animal(name, speed, focus) {
+	this.name = name;
+	this.speed = speed;
+	this.focus = focus;
+	this.position = 0;
+}
+
+rabbit = new Animal("Harey",7,3);
+turtle = new Animal("Shelly",2,9);
+
+while (raceOn == true) {
+	var roll = (Math.random() * 10)
+	if ((roll <= rabbit.focus) && (raceOn = true)) 
+	{
+		rabbit.position = rabbit.position + rabbit.speed
+		if (rabbit.position >= distance)
+		 {
+			raceOn = false
+			winner = rabbit.name
+		}
+	}
+	if ((roll <= turtle.focus) && (raceOn = true)) 
+	{
+		turtle.position = turtle.position + turtle.speed
+		if (turtle.position >= distance)
+		{
+			raceOn = false
+			winner = turtle.name
+		}
+	}
+	
+}
+alert(winner + " has won! " + rabbit.name + " ended the race at " + rabbit.position + " and " + turtle.name + " ended the race at " + turtle.position + ".");
+
+</script>

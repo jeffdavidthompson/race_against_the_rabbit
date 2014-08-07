@@ -1,2 +1,3 @@
 race_against_the_rabbit
 =======================
+This file calculates the positions of a turtle and rabbit in a race. The winner is determined by chance, where each character gets a die roll on each turn. If the character passes the roll, it advances by it's speed. The winner is declared after a character makes it to the 100 marker or beyond. An alert is issued at the end notifying the user of the final positions of the characters.
