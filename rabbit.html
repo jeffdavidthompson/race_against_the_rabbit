@@ -4,27 +4,32 @@ var distance = 100
 var raceOn = true
 var winner = "none"
 
-function Animal(name, speed, focus, position) {
+function Animal(name, speed, focus) {
 	this.name = name;
 	this.speed = speed;
 	this.focus = focus;
 	this.position = 0;
 }
 
-rabbit = new Animal("Harey",4,2,0);
-turtle = new Animal("Shelly",2,9,0);
+rabbit = new Animal("Harey",7,3);
+turtle = new Animal("Shelly",2,9);
 
 while (raceOn == true) {
-	if (Math.random() * 10 <= rabbit.focus || Math.random() * 10 <= turtle.focus) {
+	var roll = (Math.random() * 10)
+	if ((roll <= rabbit.focus) && (raceOn = true)) 
+	{
 		rabbit.position = rabbit.position + rabbit.speed
-		if (rabbit.position >= distance) {
+		if (rabbit.position >= distance)
+		 {
 			raceOn = false
 			winner = rabbit.name
 		}
 	}
-	if (Math.random() * 10 <= turtle.focus) {
+	if ((roll <= turtle.focus) && (raceOn = true)) 
+	{
 		turtle.position = turtle.position + turtle.speed
-		if (rabbit.position >= distance) {
+		if (turtle.position >= distance)
+		{
 			raceOn = false
 			winner = turtle.name
 		}
